@@ -1,12 +1,12 @@
 # tab-channel
 send message to other tab in the same origin. use BroadcastChannel default, use storage event as fallback
 
-##install
+## install
 ```
 npm i tab-channel
 ```
 
-##useage
+## useage
 ```javascript
 import Channel from 'tab-channel'
 
