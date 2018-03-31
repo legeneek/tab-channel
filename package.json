@@ -1,0 +1,41 @@
+{
+  "name": "tab-channel",
+  "version": "1.0.0",
+  "description": "send message to other tab in the same origin. use BroadcastChannel as default, use storage event as fallback",
+  "main": "dist/channel.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.11.1",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env NODE_ENV='dev' ./node_modules/.bin/webpack --config ./webpack.config.js -w",
+    "build": "webpack --config ./webpack.config.js"
+  },
+  "keywords": [
+    "cross-tab",
+    "message",
+    "broadcastchannel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legeneek/tab-channel.git"
+  },
+  "author": "legeneek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/legeneek/tab-channel/issues"
+  },
+  "homepage": "https://github.com/legeneek/tab-channel#readme"
+}

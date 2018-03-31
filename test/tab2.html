@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tab2</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-size: 100px;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .act {
+      font-size: 40px;
+      padding: 0 100px;
+      cursor: pointer;
+      color: #727272;
+    }
+  </style>
+  <script src="channel.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="act" onclick="minus()">-</div>
+  <div id="counter">0</div>
+  <div class="act" onclick="add()">+</div>
+</div>
+<script>
+  var count = 0
+  var bc = new TabChannel.default('channel')
+  bc.onmessage = function (msg) {
+    count = JSON.parse(msg.data).count
+    updateCount(count)
+  }
+  bc.onmessageerror = function(e) {
+    console.log(e)
+  }
+
+  function minus () {
+    count--;
+    bc.postMessage(JSON.stringify({count: count}))
+    updateCount(count)
+  }
+
+  function add () {
+    count++;
+    bc.postMessage(JSON.stringify({count: count}))
+    updateCount(count)
+  }
+
+  function updateCount (num) {
+    document.getElementById('counter').innerText = num
+  }
+</script>
+</body>
+</html>
