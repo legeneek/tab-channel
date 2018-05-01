@@ -1,6 +1,6 @@
+const _msgFlag = "TcMsg_oo_";
 let _tabId = null,
   _registered = false,
-  _msgFlag = "TcMsg_oo_",
   _channels = [];
 
 function getRandomString(length) {
@@ -21,7 +21,7 @@ function msgHandler(e) {
     try {
       obj = JSON.parse(newValue);
     } catch (e) {
-      this.onmessageerror(e);
+      return this.onmessageerror(e);
     }
 
     if (
@@ -56,7 +56,6 @@ class TabChannel {
 
     if (!_registered) {
       _registered = true;
-
       window.addEventListener("storage", this.handler, false);
     }
   }
