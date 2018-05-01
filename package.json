@@ -1,6 +1,6 @@
 {
   "name": "tab-channel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "send message to other tab in the same origin. use BroadcastChannel as default, use storage event as fallback",
   "main": "dist/channel.js",
   "directories": {
